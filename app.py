@@ -33,7 +33,7 @@ def result():
     except ValueError:
         valid = False
         message = "You didn't select a day! INVALID date format"
-    return render_template()
+    return render_template('result.html', message=message, valid=valid)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=5001)

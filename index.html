@@ -1,0 +1,19 @@
+<!-- Daniel Kareti -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Input Form</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+
+    <h3>This site checks to make sure you have a valid birthday!</h3>
+    <form action="/result" method="post">
+        <label>Name:</label>
+            <input type="text" id="name" name="name" required>
+        <label>Birthday: </label>
+            <input type="date" name="birthday" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

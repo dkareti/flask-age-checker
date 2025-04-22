@@ -34,3 +34,6 @@ def result():
         valid = False
         message = "You didn't select a day! INVALID date format"
     return render_template()
+
+if __name__ == "__main__":
+    app.run(debug=True)

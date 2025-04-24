@@ -6,8 +6,25 @@
 </head>
 <body>
     <h2>{{ message }}</h2>
+
+    {% if age_group %}
+        <p><strong>Predicted Age Group (using ML model):</strong></p>
+    {% endif %}
+ <!-- Extra flair ;) -->
+    {% if age_group == 'Child' %}
+        <p>👶 You're just getting started on your journey!</p>
+    {% elif age_group == 'Teen' %}
+        <p>🧑 Enjoy your teenage adventures!</p>
+    {% elif age_group == 'Young Adult' %}
+        <p>🚀 The world is yours to explore!</p>
+    {% elif age_group == 'Adult' %}
+        <p>💼 Time to make an impact!</p>
+    {% elif age_group == 'Senior' %}
+        <p>🧓 Wiser with the years — you're a legend!</p>
+    {% endif %}
+
     {% if not valid %}
-        <a href="/">Try Again</a>
+        <a href="/">Please try again.</a>
     {% endif %}
 </body>
 </html>

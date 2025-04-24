@@ -6,6 +6,7 @@
 
 from flask import Flask, render_template, request
 from datetime import datetime
+from predict import predict_age_group
 
 app = Flask(__name__)
 
@@ -27,13 +28,17 @@ def result():
         if(birthday > today):
             valid = False
             message = "Your birthday cannot be in the future!"
+            age_group = None
         else:
             age = today.year - birthday.year - ((today.month, today.day) < (birthday.month, birthday.day))
-            message = f"Hello {name}, your birthday is valid! As of today you are {age} years old."
+            age_group = predict_age_group(age)
+            message = (f"Hello {name}, your birthday is valid! As of today you are {age} years old."
+                       f" and you're in the '{age_group}' age group.")
     except ValueError:
         valid = False
         message = "You didn't select a day! INVALID date format"
-    return render_template('result.html', message=message, valid=valid)
+        age_group = None
+    return render_template('result.html', message=message, valid=valid, age_group = age_group)
 
 if __name__ == "__main__":
     app.run(port=5001)

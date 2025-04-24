@@ -23,3 +23,16 @@ This is a basic Flask web application that takes user input via an HTML form and
 
 ## Author
 Daniel Kareti
+
+
+##### Additional Instructions
+In order for the retraining to not be run EVERY time the server is run, use the joblib package
+
+`pip install joblib`
+
+# Steps to run the modified flask app
+Run the command: `python3 train_model.py`
+
+Run the flask app: 
+
+Steps mentioned above

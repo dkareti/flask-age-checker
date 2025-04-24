@@ -9,7 +9,11 @@ This is a basic Flask web application that takes user input via an HTML form and
 
 1. Clone this repository
 2. Create a virtual environment and install Flask:
-`python -m venv venv`
+
+CREATE ONCE:
+------------------------
+`python -m venv venv` 
+------------------------
 
 `source venv/bin/activate  # or venv\Scripts\activate on Windows`
 

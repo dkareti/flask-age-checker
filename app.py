@@ -32,7 +32,7 @@ def result():
         else:
             age = today.year - birthday.year - ((today.month, today.day) < (birthday.month, birthday.day))
             age_group = predict_age_group(age)
-            message = (f"Hello {name}, your birthday is valid! As of today you are {age} years old."
+            message = (f"Hello {name}, your birthday is valid! \nAs of today you are {age} years old"
                        f" and you're in the '{age_group}' age group.")
     except ValueError:
         valid = False

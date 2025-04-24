@@ -4,6 +4,7 @@
 # Simple Flask Web App
 
 This is a basic Flask web application that takes user input via an HTML form and displays a personalized greeting.
+I modified my simple Flask web app, to group the user's age based on a ml model.
 
 ## How to Run
 

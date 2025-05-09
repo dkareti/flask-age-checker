@@ -20,6 +20,28 @@ header {
     align-items: center;
 }
 
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--medium-blue);
+    color: var(--beige-off-white);
+    text-decoration: none;
+    border-radius: 4px;
+    border-color: #001f3f;
+    transition: all 0.3s ease; /* Smooth transition */
+
+    
+  }
+  
+  .btn:hover {
+    background-color: var(--beige-off-white);   /* Darker blue on hover */
+    color: var(--medium-blue);
+    transform: scale(1.05);      /* Slightly enlarge */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow */
+
+    
+  }
+
 .site-title {
     margin: 0;
     font-size: 1.8em;

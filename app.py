@@ -18,6 +18,13 @@ def index():
 def result():
     name = request.form.get('name')
 
+    parts = name.strip().split()
+
+    # Default to empty in case of missing values
+    first_name = parts[0] if len(parts) > 0 else ""
+    last_name = parts[1] if len(parts) > 1 else ""
+
+
     birthday_str = request.form.get('birthday')
 
     try:
@@ -32,11 +39,11 @@ def result():
         else:
             age = today.year - birthday.year - ((today.month, today.day) < (birthday.month, birthday.day))
             age_group = predict_age_group(age)
-            message = (f"Hello {name}, your birthday is valid! \nAs of today you are {age} years old"
-                       f" and you're in the '{age_group}' age group.")
+            message = (f"Hello {first_name}, your birthday is valid! \nAs of today you are {age} years old"
+                       f" and, based on your age, you're placed in the '{age_group}' age group.")
     except ValueError:
         valid = False
-        message = "You didn't select a day! INVALID date format"
+        message = "You didn't select a valid date! :( )"
         age_group = None
     return render_template('result.html', message=message, valid=valid, age_group = age_group)
 

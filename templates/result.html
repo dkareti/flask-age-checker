@@ -3,27 +3,48 @@
 <html>
 <head>
     <title>Result</title>
+    <link rel="stylesheet" href="styling/styles.css">
 </head>
 <body>
-    <h2>{{ message }}</h2>
 
+    <header>
+        <div class="header-container">
+            <h1 class="site-title">🎉 Age Group Classifier</h1>
+            <nav>
+                <a href="/">Restart</a>
+            </nav>
+        </div>
+    </header>
     {% if age_group %}
         <p><strong>Predicted Age Group (using ML model):</strong> {{age_group}}</p>
         <p>If you want to try again, click below:</p>
         <a href="/">Click Me!</a>
     {% endif %}
- <!-- Extra flair ;) -->
+
+    <div class="container">
+    <p>
+        {{ message }}
+    </p>
+    </div>
+
+    <!-- Extra flair ;) -->
     {% if age_group == 'Child' %}
-        <p>👶 You're just getting started on your journey!</p>
+        <p><span class="emoji">👶</span> You're just getting started on your journey!</p>
     {% elif age_group == 'Teen' %}
-        <p>🧑 Enjoy your teenage adventures!</p>
+        <p><span class="emoji">🧑</span> Enjoy your teenage adventures!</p>
     {% elif age_group == 'Young Adult' %}
-        <p>🚀 The world is yours to explore!</p>
+        <p><span class="emoji">🚀</span> The world is yours to explore!</p>
     {% elif age_group == 'Adult' %}
-        <p>💼 Time to make an impact!</p>
+        <p><span class="emoji">💼</span> Time to make an impact!</p>
     {% elif age_group == 'Senior' %}
-        <p>🧓 Wiser with the years — you're a legend!</p>
+        <p><span class="emoji">🧓</span> Wiser with the years — you're a legend!</p>
     {% endif %}
+
+    {% if age_group %}
+        <p>If you want to try again, click below:</p>
+        <a href="/">Click Me!</a>
+    {% endif %}
+ 
 
     {% if not valid %}
         <a href="/">Please try again.</a>

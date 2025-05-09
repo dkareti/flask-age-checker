@@ -8,6 +8,7 @@
 #####################
 
 import joblib
+import pandas as pd
 
 # Load pre-trained model and label encoder
 try:
@@ -17,5 +18,6 @@ except FileNotFoundError:
     raise RuntimeError("Model files not found. Run train_model.py first.")
 
 def predict_age_group(age):
-    encoded = model.predict([[age]])[0]
+    input_df = pd.DataFrame([[age]], columns=['age'])
+    encoded = model.predict(input_df)[0]
     return label_encoder.inverse_transform([encoded])[0]
